@@ -62,7 +62,7 @@ def dokument(m):
     informacja_pliku = bot.get_file(m.document.file_id)
     zapisany_plik = bot.download_file(informacja_pliku.file_path)
 
-    miejsce_zapisu = "Coś/telegram_bot/bot_do_znazezienia_miejsca_pobytu/pliki_od_ludzi/" + m.document.file_name
+    miejsce_zapisu = "pliki_od_ludzi/" + m.document.file_name
     with open(miejsce_zapisu, "wb") as nowy_plik:
         nowy_plik.write(zapisany_plik)
     bot.reply_to(m, "Dziękuję, ja zapisałem ten dokument do siebie")
