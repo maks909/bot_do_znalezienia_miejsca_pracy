@@ -67,4 +67,9 @@ def dokument(m):
         nowy_plik.write(zapisany_plik)
     bot.reply_to(m, "Dziękuję, ja zapisałem ten dokument do siebie")
 
+@bot.message_handler(content_types="sticker")
+def rection(m):
+    #bot.send_message(m.chat.id, f"Otrzymałem stickera. Jego id to {m.sticker.file_id}")
+    bot.send_sticker(m.chat.id, m.sticker.file_id)
+
 bot.polling(none_stop=True, interval=0)
